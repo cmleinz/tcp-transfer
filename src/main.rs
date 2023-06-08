@@ -7,7 +7,7 @@ use tokio::{
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    if std::env::args().len() != 3 {
+    if std::env::args().len() != 4 {
         println!("Usage:\ntcp-transfer send FILE_SOURCE LOCAL_SOCKET\ntcp-transfer recv EXTERNAL_SOCKET FILE_DESTINATION");
         return Ok(());
     }
