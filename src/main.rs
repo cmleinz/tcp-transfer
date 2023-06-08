@@ -41,7 +41,7 @@ async fn recv(args: &[String]) -> Result<()> {
     println!("Established connections to: {}", args[1]);
     let mut file = BufWriter::new(File::create(&args[2]).await?);
 
-    println!("Beginning save of: {file:?}");
+    println!("Beginning save of: {}", args[2]);
     let recv_time = std::time::Instant::now();
     tokio::io::copy_buf(&mut socket, &mut file).await?;
     if let Ok(meta) = file.into_inner().metadata().await {
